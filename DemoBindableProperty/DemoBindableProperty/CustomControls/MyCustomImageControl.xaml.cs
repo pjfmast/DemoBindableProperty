@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DemoBindableProperty.Custom {
+namespace DemoBindableProperty.CustomControls {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyCustomImageControl : ContentView {
 
