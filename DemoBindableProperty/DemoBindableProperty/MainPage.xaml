@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:DemoBindableProperty.Custom"
+             x:Class="DemoBindableProperty.MainPage">
+
+    <ScrollView>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Label Text="Europese vlaggen" 
+                   TextColor="Blue" 
+                   FontSize="Title"
+                   Margin="10,10" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"/>
+            
+            <StackLayout Spacing="0"
+                         Grid.Row="1"
+                         BackgroundColor="Aqua">
+                <custom:MyCustomImageControl  
+                                    Description="vlag van België" 
+                                    Image="Flag_of_Belgium.png"/>
+
+                <custom:MyCustomImageControl 
+                                    Description="vlag van Frankrijk" 
+                                    Image="Flag_of_France.png"/>
+
+                <custom:MyCustomImageControl 
+                                    Description="vlag van Koratië" 
+                                    Image="Flag_of_Croatia.png"/>
+
+                <custom:MyCustomImageControl  
+                                    Description="vlag van Italië" 
+                                    Image="Flag_of_Italy.png"/>
+
+
+                <custom:MyCustomImageControl BackgroundColor="#7c57e4" 
+                                    Description="vlag van Nederland" 
+                                    Image="Flag_of_the_Netherlands.png"/>
+
+                <custom:MyCustomImageControl 
+                                    Description="vlag van Oosternrijk" 
+                                    Image="Flag_of_Austria.png"/>
+
+                <custom:MyCustomImageControl BackgroundColor="#f1b136" 
+                                    Description="vlag van Spanje" 
+                                    Image="Flag_of_Spain.png"/>
+                
+                <custom:MyCustomImageControl
+                                    Description="vlag van Zwitserland" 
+                                    Image="Flag_of_Switzerland.png"/>
+
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
