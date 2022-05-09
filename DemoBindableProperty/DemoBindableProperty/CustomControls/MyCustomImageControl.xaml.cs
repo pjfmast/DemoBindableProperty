@@ -6,13 +6,14 @@ namespace DemoBindableProperty.CustomControls {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyCustomImageControl : ContentView {
 
-        public static readonly BindableProperty DescriptionProperty = BindableProperty.Create(
-                                                  propertyName: "DescriptionText",
-                                                  returnType: typeof(string),
-                                                  declaringType: typeof(MyCustomImageControl),
-                                                  defaultValue: "",
-                                                  defaultBindingMode: BindingMode.TwoWay,
-                                                  propertyChanged: DescriptionPropertyChanged);
+        public static readonly BindableProperty DescriptionProperty 
+            = BindableProperty.Create(
+                propertyName: nameof(Description),
+                returnType: typeof(string),
+                declaringType: typeof(MyCustomImageControl),
+                defaultValue: "",
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: DescriptionPropertyChanged);
 
         public string Description {
             get { return base.GetValue(DescriptionProperty).ToString(); }
@@ -24,13 +25,14 @@ namespace DemoBindableProperty.CustomControls {
             control.description.Text = newValue.ToString();
         }
 
-        public static readonly BindableProperty ImageProperty = BindableProperty.Create(
-                                                        propertyName: "Image",
-                                                        returnType: typeof(string),
-                                                        declaringType: typeof(MyCustomImageControl),
-                                                        defaultValue: "",
-                                                        defaultBindingMode: BindingMode.TwoWay,
-                                                        propertyChanged: ImageSourcePropertyChanged);
+        public static readonly BindableProperty ImageProperty
+            = BindableProperty.Create(
+                propertyName: nameof(Image),
+                returnType: typeof(string),
+                declaringType: typeof(MyCustomImageControl),
+                defaultValue: "",
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: ImageSourcePropertyChanged);
 
         public string Image {
             get { return base.GetValue(ImageProperty).ToString(); }
