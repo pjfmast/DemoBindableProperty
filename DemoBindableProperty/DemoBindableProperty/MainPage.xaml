@@ -2,22 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:DemoBindableProperty.CustomControls"
+             xmlns:viewmodels="clr-namespace:DemoBindableProperty.ViewModels"
+             x:DataType="viewmodels:FlagViewModel"
              x:Class="DemoBindableProperty.MainPage">
 
-    <ScrollView>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
+
             <Label Text="Europese vlaggen" 
                    TextColor="Blue" 
                    FontSize="Title"
                    Margin="10,10" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center"/>
+
+            <Picker Grid.Row ="1"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    ItemsSource="{Binding Countries}"
+                    SelectedItem="{Binding Country}"
+                    FontSize="Large"/>
             
+            <custom:MyCustomImageControl
+                Grid.Row="2"
+                Description="{Binding FlagDescription}"
+                Image="{Binding FlagImage}" />
+
+            <!--
+                        
             <StackLayout Spacing="0"
                          Grid.Row="1"
                          BackgroundColor="Aqua">
@@ -54,7 +70,6 @@
                                     Description="vlag van Zwitserland" 
                                     Image="Flag_of_Switzerland.png"/>
 
-            </StackLayout>
+            </StackLayout>-->
         </Grid>
-    </ScrollView>
 </ContentPage>

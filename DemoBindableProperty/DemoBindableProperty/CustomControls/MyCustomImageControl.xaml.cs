@@ -5,13 +5,16 @@ using Xamarin.Forms.Xaml;
 namespace DemoBindableProperty.CustomControls {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyCustomImageControl : ContentView {
-
+        // The naming convention for bindable properties
+        // is that the bindable property identifier
+        // must match the property name specified in the Create method,
+        // with "Property" appended to it.
         public static readonly BindableProperty DescriptionProperty 
             = BindableProperty.Create(
                 propertyName: nameof(Description),
                 returnType: typeof(string),
                 declaringType: typeof(MyCustomImageControl),
-                defaultValue: "",
+                defaultValue: string.Empty,
                 defaultBindingMode: BindingMode.TwoWay,
                 propertyChanged: DescriptionPropertyChanged);
 
@@ -22,7 +25,7 @@ namespace DemoBindableProperty.CustomControls {
 
         private static void DescriptionPropertyChanged(BindableObject bindable, object oldValue, object newValue) {
             var control = (MyCustomImageControl)bindable;
-            control.description.Text = newValue.ToString();
+            control.description.Text = newValue?.ToString();
         }
 
         public static readonly BindableProperty ImageProperty

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoBindableProperty.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,6 +11,9 @@ namespace DemoBindableProperty {
     public partial class MainPage : ContentPage {
         public MainPage() {
             InitializeComponent();
+
+            FlagViewModel viewModel = new FlagViewModel();
+            this.BindingContext = viewModel;
         }
     }
 }
